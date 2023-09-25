@@ -149,27 +149,30 @@ limitations under the License.
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
             <version>2.5.3</version>
             <configuration>
-              <arguments>-Dmaven.javadoc.skip=true</arguments>
-              <username>${scmUsername}</username>
-              <password>${scmPassword}</password>
-	      <autoVersionSubmodules>true</autoVersionSubmodules>
-	      <tagNameFormat>V@{project.version}</tagNameFormat>
+    	      <tagNameFormat>V@{project.version}</tagNameFormat>
             </configuration>
-            <dependencies>
-              <dependency>
-                <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.8.1</version>
-              </dependency>
-            </dependencies>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
-            <version>3.0.0-M1</version>
+            <version>3.4.1</version>
             <executions>
               <execution>
                 <id>enforce-no-snapshots</id>
@@ -187,19 +190,30 @@ limitations under the License.
               </execution>
             </executions>
           </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
       </build>
     </profile>
   </profiles>
 
-  <distributionManagement>
-    <repository>
-      <id>nexus-oxiane</id>
-      <url>${jenkins.oxiane.repository.url}</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus-oxiane</id>
-      <url>${jenkins.oxiane.snapshot.url}</url>
-    </snapshotRepository>
-  </distributionManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>
