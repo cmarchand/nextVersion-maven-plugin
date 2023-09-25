@@ -1,4 +1,4 @@
-package com.oxiane.teams.all.ictools;
+package top.marchand.maven.plugins;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

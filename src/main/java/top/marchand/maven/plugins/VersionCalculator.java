@@ -1,4 +1,4 @@
-package com.oxiane.teams.all.ictools;
+package top.marchand.maven.plugins;
 
 import java.text.NumberFormat;
 import java.util.StringJoiner;

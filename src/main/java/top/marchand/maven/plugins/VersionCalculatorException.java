@@ -1,4 +1,4 @@
-package com.oxiane.teams.all.ictools;
+package top.marchand.maven.plugins;
 
 public class VersionCalculatorException extends Exception {
   public VersionCalculatorException() {

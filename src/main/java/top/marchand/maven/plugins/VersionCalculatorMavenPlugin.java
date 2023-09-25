@@ -1,4 +1,4 @@
-package com.oxiane.teams.all.ictools;
+package top.marchand.maven.plugins;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;

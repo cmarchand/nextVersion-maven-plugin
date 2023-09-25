@@ -1,7 +1,7 @@
-package com.oxiane.teams.all.ictools.glues;
+package top.marchand.maven.plugins.glues;
 
-import com.oxiane.teams.all.ictools.VersionCalculator;
-import com.oxiane.teams.all.ictools.VersionCalculatorException;
+import top.marchand.maven.plugins.VersionCalculator;
+import top.marchand.maven.plugins.VersionCalculatorException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
