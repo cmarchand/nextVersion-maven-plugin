@@ -23,8 +23,8 @@ limitations under the License.
   <packaging>maven-plugin</packaging>
 
   <scm>
-    <developerConnection>git@git.clever-age.net:oxiane/gitlab-oxiane/teams/all/ic-tools.git</developerConnection>
-    <url>https://git.clever-age.net/oxiane/gitlab-oxiane/teams/all/ic-tools</url>
+    <developerConnection>git@github.com:cmarchand/nextVersion-maven-plugin.git</developerConnection>
+    <url>https://github.com/cmarchand/nextVersion-maven-plugin</url>
     <tag>HEAD</tag>
   </scm>
   
