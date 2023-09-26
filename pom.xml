@@ -23,7 +23,7 @@ limitations under the License.
   <packaging>maven-plugin</packaging>
 
   <scm>
-    <developerConnection>git@github.com:cmarchand/nextVersion-maven-plugin.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:cmarchand/nextVersion-maven-plugin.git</developerConnection>
     <url>https://github.com/cmarchand/nextVersion-maven-plugin</url>
     <tag>HEAD</tag>
   </scm>
