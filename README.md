@@ -1,6 +1,6 @@
 # nextVersion-maven-plugin
 
-A plugin to calculate next release version and next snapshot version, as to be used by
+A plugin to calculate next release and next snapshot versions, as to be used by
 [maven-release-plugin](https://maven.apache.org/maven-release/maven-release-plugin/).
 
 This plugin requires a project, so you must run it in a project.
