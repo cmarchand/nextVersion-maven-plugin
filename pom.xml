@@ -19,15 +19,40 @@ limitations under the License.
   <groupId>top.marchand.maven.plugins</groupId>
   <artifactId>nextVersion-maven-plugin</artifactId>
   <version>1.00.00-SNAPSHOT</version>
-  <name>A maven plugin to calculate next versions</name>
   <packaging>maven-plugin</packaging>
+
+  <name>nextVersion-maven-plugin</name>
+  <description>A maven plugin to calculate next versions</description>
+
+  <url>https://github.com/cmarchand/nextVersion-maven-plugin</url>
 
   <scm>
     <developerConnection>scm:git:git@github.com:cmarchand/nextVersion-maven-plugin.git</developerConnection>
     <url>https://github.com/cmarchand/nextVersion-maven-plugin</url>
     <tag>HEAD</tag>
   </scm>
-  
+
+  <developers>
+    <developer>
+     <name>Christophe Marchand</name>
+     <email>christophe@marchand.top</email>
+     <url>https://github.com/cmarchand</url>
+     <roles>
+       <role>Developer</role>
+     </roles>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <inceptionYear>2023</inceptionYear>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
