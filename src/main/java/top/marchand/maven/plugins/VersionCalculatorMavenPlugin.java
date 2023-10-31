@@ -23,7 +23,9 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Mojo(name = "calculate")
 public class VersionCalculatorMavenPlugin extends AbstractMojo {
@@ -38,7 +40,7 @@ public class VersionCalculatorMavenPlugin extends AbstractMojo {
    * The type of release to calculate.
    * Legal values are PATCH, MINOR, MAJOR
    */
-  @Parameter(defaultValue = NONE)
+  @Parameter(defaultValue = "${releaseType}")
   private String releaseType;
 
   @Parameter(defaultValue = "${project}")
@@ -47,6 +49,8 @@ public class VersionCalculatorMavenPlugin extends AbstractMojo {
   @Override
   public void execute() throws MojoExecutionException, MojoFailureException {
     if(NONE.equals(releaseType)) return;
+    if(releaseType==null) return;
+    if(releaseType.isEmpty()) return;
     try {
       VersionCalculator versionCalculator = new VersionCalculator(currentVersion);
       ReleaseTypeStrategy wrapper = ReleaseTypeStrategy.of(releaseType);
@@ -120,7 +124,12 @@ public class VersionCalculatorMavenPlugin extends AbstractMojo {
       return Arrays.stream(values())
           .filter(v -> v.code().equals(releaseType))
           .findFirst()
-          .orElseThrow();
+          .orElseThrow(() -> new NoSuchElementException(
+              "Allowed release types are " +
+                  Arrays.stream(values())
+                      .map(releaseTypeStrategy -> releaseTypeStrategy.code)
+                      .collect(Collectors.joining(",","[","]"))
+          ));
     }
 
     NextRelease calculateNextRelease(VersionCalculator versionCalculator) {

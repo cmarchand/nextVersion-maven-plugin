@@ -30,4 +30,5 @@ public class VersionCalculatorTest {
     VersionCalculator versionCalculator = new VersionCalculator(inputVersion);
     Assertions.assertThat(versionCalculator.snapshot()).isTrue();
   }
+
 }
