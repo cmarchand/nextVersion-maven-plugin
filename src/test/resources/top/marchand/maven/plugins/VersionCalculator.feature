@@ -7,7 +7,7 @@ Feature: Calculate version numbers
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
-      http://www.apache.org/licenses/LICENSE-2.0
+  http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,7 +42,7 @@ Feature: Calculate version numbers
     When next patch snapshot is call
     Then <expected> is expected
     Examples:
-      | input              | expected  |
+      | input              | expected           |
       | "1.00.00"          | "1.00.02-SNAPSHOT" |
       | "1.00.00-SNAPSHOT" | "1.00.01-SNAPSHOT" |
       | "1.00.01-SNAPSHOT" | "1.00.02-SNAPSHOT" |
@@ -56,6 +56,7 @@ Feature: Calculate version numbers
     Then <expected> is expected
     Examples:
       | input              | expected  |
+      | "2.08.03-SNAPSHOT" | "2.09.00" |
       | "1.00.00"          | "1.01.00" |
       | "1.00.00-SNAPSHOT" | "1.00.00" |
       | "1.00.01-SNAPSHOT" | "1.01.00" |
@@ -68,7 +69,7 @@ Feature: Calculate version numbers
     When next minor snapshot is call
     Then <expected> is expected
     Examples:
-      | input              | expected  |
+      | input              | expected           |
       | "1.00.00"          | "1.01.01-SNAPSHOT" |
       | "1.00.00-SNAPSHOT" | "1.00.01-SNAPSHOT" |
       | "1.00.01-SNAPSHOT" | "1.01.01-SNAPSHOT" |
@@ -94,7 +95,7 @@ Feature: Calculate version numbers
     When next major snapshot is call
     Then <expected> is expected
     Examples:
-      | input              | expected  |
+      | input              | expected           |
       | "1.00.00"          | "2.00.01-SNAPSHOT" |
       | "1.00.00-SNAPSHOT" | "1.00.01-SNAPSHOT" |
       | "1.00.01-SNAPSHOT" | "2.00.01-SNAPSHOT" |
